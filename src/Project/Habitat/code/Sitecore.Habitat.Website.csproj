@@ -162,6 +162,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
+    <Content Include="App_Config\Include\zCustom\z.Habitat.UserSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Security\domains.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -251,4 +254,3 @@
   <Target Name="AfterBuild">
   </Target> -->
 </Project>
-

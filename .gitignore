@@ -26,3 +26,4 @@ temp/
 *.ncrunchsolution
 .vscode
 nCrunchTemp*.*
+src/Project/Habitat/code/App_Config/Include/zCustom/z.Habitat.UserSettings.config
