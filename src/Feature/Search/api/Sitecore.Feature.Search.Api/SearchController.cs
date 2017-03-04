@@ -10,11 +10,14 @@
 namespace Sitecore.Feature.Search.Api
 {
     using System.Web.Http;
+    using Services.Core;
+    using Services.Infrastructure.Web.Http;
 
     /// <summary>
     /// The search controller.
     /// </summary>
-    public class SearchController : Services.Infrastructure.Web.Http.ServicesApiController
+    [ServicesController("Search")]
+    public class SearchController : ServicesApiController
     {
         /// <summary>
         /// The test.
@@ -26,13 +29,15 @@ namespace Sitecore.Feature.Search.Api
         /// The search results.
         /// </returns>
         [HttpGet]
-        public IHttpActionResult Get(string keywords)
+        public dynamic Get(string keywords)
         {
-            return this.Ok(new
+            var test  = new
             {
                 Name = keywords,
                 URL = "www.google.com"
-            });
+            };
+
+            return this.Ok(test);
         }
     }
 }
