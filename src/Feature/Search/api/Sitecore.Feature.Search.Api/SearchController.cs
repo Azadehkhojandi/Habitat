@@ -32,12 +32,12 @@ namespace Sitecore.Feature.Search.Api
         /// The search results.
         /// </returns>
         [HttpGet]
-        public IEnumerable<SearchFeedsModel> Get(string keywords)
+        public IEnumerable<SearchFeedsModel> Get(string id)
         {
             return new List<SearchFeedsModel>()
                            {
-                               new SearchFeedsModel() { Name = keywords, Description = "Test1", Link = "www.google.com" },
-                               new SearchFeedsModel() { Name = keywords, Description = "Test2", Link = "www.google.com" },
+                               new SearchFeedsModel() { Name = id, Description = "Test1", Link = "www.google.com" },
+                               new SearchFeedsModel() { Name = id, Description = "Test2", Link = "www.google.com" },
                            };
         }
     }
