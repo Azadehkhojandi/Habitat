@@ -12,14 +12,10 @@ namespace Sitecore.Feature.Search.Controllers
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-
     using Foundation.Indexing.Models;
     using Foundation.Indexing.Repositories;
-
     using Models;
-
     using Repositories;
-
     using Services.Core;
     using Services.Infrastructure.Web.Http;
 
@@ -29,8 +25,19 @@ namespace Sitecore.Feature.Search.Controllers
     [ServicesController]
     public class SearchApiController : ServicesApiController
     {
+        /// <summary>
+        /// Gets the search service repository.
+        /// </summary>
         public ISearchServiceRepository SearchServiceRepository { get; }
+
+        /// <summary>
+        /// Gets the search context repository.
+        /// </summary>
         public ISearchContextRepository SearchContextRepository { get; }
+
+        /// <summary>
+        /// Gets the query repository.
+        /// </summary>
         public QueryRepository QueryRepository { get; }
 
         /// <summary>
@@ -61,6 +68,9 @@ namespace Sitecore.Feature.Search.Controllers
         /// <summary>
         /// The test.
         /// </summary>
+        /// <param name="id">
+        /// The search keywords. 
+        /// </param>
         /// <returns>
         /// The search results.
         /// </returns>
@@ -76,12 +86,12 @@ namespace Sitecore.Feature.Search.Controllers
 
             return results.Results.Where(searchResult => searchResult.Item != null)
                                   .Select(searchResult => new SearchFeedsModel()
-                                                              {
-                                                                  Name = searchResult.Title,
-                                                                  Description = searchResult.Description,
-                                                                  Link = searchResult.Url.ToString(),
-                                                                  ImageUrl = searchResult.ImageUrl
-                                                              }).ToList();
+                                  {
+                                      Name = searchResult.Title,
+                                      Description = searchResult.Description,
+                                      Link = searchResult.Url.ToString(),
+                                      ImageUrl = searchResult.ImageUrl
+                                  }).ToList();
         }
 
         /// <summary>
