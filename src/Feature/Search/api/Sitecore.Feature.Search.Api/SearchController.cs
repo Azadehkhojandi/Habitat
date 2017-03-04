@@ -9,14 +9,17 @@
 
 namespace Sitecore.Feature.Search.Api
 {
+    using System.Collections.Generic;
     using System.Web.Http;
     using Services.Core;
     using Services.Infrastructure.Web.Http;
 
+    using Sitecore.Feature.Search.Api.Models;
+
     /// <summary>
     /// The search controller.
     /// </summary>
-    [ServicesController("Search")]
+    [ServicesController]
     public class SearchController : ServicesApiController
     {
         /// <summary>
@@ -29,15 +32,13 @@ namespace Sitecore.Feature.Search.Api
         /// The search results.
         /// </returns>
         [HttpGet]
-        public dynamic Get(string keywords)
+        public IEnumerable<SearchFeedsModel> Get(string keywords)
         {
-            var test  = new
-            {
-                Name = keywords,
-                URL = "www.google.com"
-            };
-
-            return this.Ok(test);
+            return new List<SearchFeedsModel>()
+                           {
+                               new SearchFeedsModel() { Name = keywords, Description = "Test1", Link = "www.google.com" },
+                               new SearchFeedsModel() { Name = keywords, Description = "Test2", Link = "www.google.com" },
+                           };
         }
     }
 }
