@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SearchController.cs" company="Redstuffy">
+// <copyright file="SearchApiController.cs" company="Redstuffy">
 //   Copyright (c) Redstuffy. All rights reserved.
 // </copyright>
 // <summary>
@@ -74,11 +74,25 @@ namespace Sitecore.Feature.Search.Controllers
 
             var results = this.SearchServiceRepository.Get().Search(query);
 
-            return results.Results
-                .Where(searchResult => searchResult.Item != null)
-                .Select(searchResult => new SearchFeedsModel() { Name = searchResult.Title, Description = searchResult.Description, Link = searchResult.Url.ToString() }).ToList();
+            return results.Results.Where(searchResult => searchResult.Item != null)
+                                  .Select(searchResult => new SearchFeedsModel()
+                                                              {
+                                                                  Name = searchResult.Title,
+                                                                  Description = searchResult.Description,
+                                                                  Link = searchResult.Url.ToString(),
+                                                                  ImageUrl = searchResult.ImageUrl
+                                                              }).ToList();
         }
 
+        /// <summary>
+        /// The create query.
+        /// </summary>
+        /// <param name="query">
+        /// The query.
+        /// </param>
+        /// <returns>
+        /// The <see cref="IQuery"/>.
+        /// </returns>
         private IQuery CreateQuery(SearchQuery query)
         {
             return this.QueryRepository.Get(query);

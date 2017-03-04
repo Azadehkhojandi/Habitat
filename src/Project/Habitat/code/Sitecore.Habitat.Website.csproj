@@ -212,6 +212,10 @@
     <Folder Include="Views\Website\Sublayouts\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Feature\Person\code\Sitecore.Feature.Person.csproj">
+      <Project>{452c63b5-6019-4ec2-9a9b-9b5dd3241485}</Project>
+      <Name>Sitecore.Feature.Person</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\feature\Search\code\Sitecore.Feature.Search.csproj">
       <Project>{55b9c026-e106-4185-8213-9cdd53b44e1b}</Project>
       <Name>Sitecore.Feature.Search</Name>

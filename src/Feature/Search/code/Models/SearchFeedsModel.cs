@@ -28,5 +28,10 @@ namespace Sitecore.Feature.Search.Models
         /// Gets or sets the link.
         /// </summary>
         public string Link { get; set; }
+
+        /// <summary>
+        /// Gets or sets the image url.
+        /// </summary>
+        public string ImageUrl { get; set; }
     }
 }
