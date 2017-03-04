@@ -215,9 +215,9 @@
     <Folder Include="Views\Website\Sublayouts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Feature\Search\api\Sitecore.Feature.Search.Api\Sitecore.Feature.Search.Api.csproj">
-      <Project>{33f2508a-b9f7-4ea5-a80f-d121e9cc7d79}</Project>
-      <Name>Sitecore.Feature.Search.Api</Name>
+    <ProjectReference Include="..\..\..\feature\Search\code\Sitecore.Feature.Search.csproj">
+      <Project>{55b9c026-e106-4185-8213-9cdd53b44e1b}</Project>
+      <Name>Sitecore.Feature.Search</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Assets\code\Sitecore.Foundation.Assets.csproj">
       <Project>{7E46FF93-EE05-412C-AC47-2A59A13DA73C}</Project>
