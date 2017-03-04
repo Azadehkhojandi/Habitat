@@ -51,7 +51,7 @@
 
         private static Item GetSearchResultsPageItemFromRenderingContext()
         {
-            var item = RenderingContext.Current?.Rendering.Item;
+            var item = Context.Item == null ? null : RenderingContext.Current?.Rendering.Item;
             return item != null && item.IsDerived(Templates.SearchResults.ID) ? item : null;
         }
 

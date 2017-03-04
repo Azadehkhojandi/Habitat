@@ -191,16 +191,12 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
-    <Content Include="App_Config\Include\zCustom\z.Habitat.UserSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="App_Config\Security\domains.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
     <None Include="web.config" />
@@ -212,6 +208,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Config\Include\zCustom\" />
     <Folder Include="Views\Website\Sublayouts\" />
   </ItemGroup>
   <ItemGroup>

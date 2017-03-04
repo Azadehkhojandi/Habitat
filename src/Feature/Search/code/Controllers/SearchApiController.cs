@@ -30,7 +30,7 @@ namespace Sitecore.Feature.Search.Controllers
     public class SearchApiController : ServicesApiController
     {
         public ISearchServiceRepository SearchServiceRepository { get; }
-
+        public ISearchContextRepository SearchContextRepository { get; }
         public QueryRepository QueryRepository { get; }
 
         /// <summary>
@@ -38,7 +38,8 @@ namespace Sitecore.Feature.Search.Controllers
         /// </summary>
         public SearchApiController()
         {
-            this.SearchServiceRepository = new SearchServiceRepository(new SearchContext());
+            this.SearchContextRepository = new SearchContextRepository();
+            this.SearchServiceRepository = new SearchServiceRepository(this.SearchContextRepository.Get());
             this.QueryRepository = new QueryRepository();
         }
 
