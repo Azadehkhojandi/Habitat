@@ -74,7 +74,9 @@ namespace Sitecore.Feature.Search.Controllers
 
             var results = this.SearchServiceRepository.Get().Search(query);
 
-            return results.Results.Select(searchResult => new SearchFeedsModel() { Name = searchResult.Title, Description = searchResult.Description, Link = searchResult.Url.ToString() }).ToList();
+            return results.Results
+                .Where(searchResult => searchResult.Item != null)
+                .Select(searchResult => new SearchFeedsModel() { Name = searchResult.Title, Description = searchResult.Description, Link = searchResult.Url.ToString() }).ToList();
         }
 
         private IQuery CreateQuery(SearchQuery query)
